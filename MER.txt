@@ -1,0 +1,5 @@
+Produto("Id_Produto"(PK),"Nome","Preço","Quantidade_Em_Estoque","Categoria")
+Fornecedor("Id_Fornecedor" (PK),"Nome","Contato","Endereço")
+Compra("Id_Compra"(PK),"Id_Fornecedor" (FK),"Id_Produto" (FK), "Quantidade", "Valor_Total")
+Venda("Id_Venda" (PK),"Data","Id_Produto" (FK),"Quantidade","Valor_Total")
+Funcionário("Código_Funcionário" (PK), "Nome","Cargo")
