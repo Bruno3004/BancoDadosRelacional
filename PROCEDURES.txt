@@ -1,0 +1,41 @@
+INSERT----------------------------------
+
+CREATE PROCEDURE InserirUsuarios (
+    @Usuario NVARCHAR(50),
+    @Senha NVARCHAR(50)
+)
+BEGIN
+    INSERT INTO Usuarios (Usuario, Senha)
+    VALUES (@Usuario, @Senha);
+END;
+
+CALL InserirUsuario 'Bruno','6324550'
+--------------------------------------
+
+CREATE PROCEDURE SelecionarUsuario
+BEGIN
+	SELECT Usuario, Senha
+	FROM Usuarios;
+END;
+
+--------------------------------------
+
+CREATE PROCEDURE DeletarUsuario (
+    @Usuario NVARCHAR(50)
+)
+BEGIN
+    DELETE FROM Usuarios
+    WHERE Usuario = @Usuario;
+END;
+--------------------------------------
+
+CREATE PROCEDURE AtualizarSenha (
+    @UsuarioAntigo NVARCHAR(50),
+    @UsuarioNovo NVARCHAR(50),
+    @NovaSenha NVARCHAR(50)
+)
+BEGIN
+    UPDATE Usuarios
+    SET Usuario = @UsuarioNovo, Senha = @NovaSenha
+    WHERE Usuario = @UsuarioAntigo;
+END;
